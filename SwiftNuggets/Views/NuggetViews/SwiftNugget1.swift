@@ -9,7 +9,32 @@ import SwiftUI
 
 struct SwiftNugget1: View {
     var body: some View {
-        Text("SwiftNugget1")
+        NavigationStack {
+            Form {
+                Section(".submitLabel") {
+                    TextField(".submitLabel: Continue", text: .constant(""))
+                        .submitLabel(.continue)
+                    TextField(".submitLabel: Done", text: .constant(""))
+                        .submitLabel(.done)
+                    TextField(".submitLabel: Go", text: .constant(""))
+                        .submitLabel(.go)
+                    TextField(".submitLabel: Join", text: .constant(""))
+                        .submitLabel(.join)
+                    TextField(".submitLabel: Next", text: .constant(""))
+                        .submitLabel(.next)
+                    TextField(".submitLabel: Return", text: .constant(""))
+                        .submitLabel(.return)
+                    TextField(".submitLabel: Route", text: .constant(""))
+                        .submitLabel(.route)
+                    TextField(".submitLabel: Search", text: .constant(""))
+                        .submitLabel(.search)
+                    TextField(".submitLabel: Send", text: .constant(""))
+                        .submitLabel(.send)
+                }
+                .textCase(.none)
+            }
+            .navigationTitle("Swift Nugget 1")
+        }
     }
 }
 
