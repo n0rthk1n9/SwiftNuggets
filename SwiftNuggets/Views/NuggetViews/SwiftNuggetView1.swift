@@ -1,5 +1,5 @@
 //
-//  SwiftNugget1.swift
+//  SwiftNuggetView1.swift
 //  SwiftNuggets
 //
 //  Created by Jan Armbrust on 21.11.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftNugget1: View {
+struct SwiftNuggetView1: View {
     var body: some View {
         NavigationStack {
             Form {
@@ -39,5 +39,5 @@ struct SwiftNugget1: View {
 }
 
 #Preview {
-    SwiftNugget1()
+    SwiftNuggetView1()
 }

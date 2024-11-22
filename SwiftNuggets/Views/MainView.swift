@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     var views: [(title: String, view: AnyView)] = [
-        (title: "Swift Nugget 1", view: AnyView(SwiftNugget1()))
+        (title: "Swift Nugget 1", view: AnyView(SwiftNuggetView1()))
     ]
 
     var body: some View {
