@@ -11,7 +11,8 @@ struct MainView: View {
     var views: [(title: String, view: AnyView)] = [
         (title: "Swift Nugget 1", view: AnyView(SwiftNuggetView1())),
         (title: "Swift Nugget 2", view: AnyView(SwiftNuggetView2())),
-        (title: "Swift Nugget 3", view: AnyView(SwiftNuggetView3()))
+        (title: "Swift Nugget 3", view: AnyView(SwiftNuggetView3())),
+        (title: "Swift Nugget 4", view: AnyView(SwiftNuggetView4()))
     ]
 
     var body: some View {
