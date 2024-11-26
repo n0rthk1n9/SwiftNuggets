@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
-    var views: [(title: String, emoji: String, view: AnyView)] = [
-        (title: "Swift Nugget 1", emoji: "🥘", view: AnyView(SwiftNuggetView1())),
-        (title: "Swift Nugget 2", emoji: "🍲", view: AnyView(SwiftNuggetView2())),
-        (title: "Swift Nugget 3", emoji: "🍖", view: AnyView(SwiftNuggetView3())),
-        (title: "Swift Nugget 4", emoji: "🥩", view: AnyView(SwiftNuggetView4())),
-        (title: "Swift Nugget 5", emoji: "🥓", view: AnyView(SwiftNuggetView5(title: "Swift Nugget 5", emoji: "🥓")))
-    ]
+    @Environment(NuggetsViewModel.self) var nuggetsViewModel
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(views, id: \.title) { item in
-                    NavigationLink(destination: item.view) {
-                        SwiftNuggetView5(title: item.title, emoji: item.emoji)
+                ForEach(nuggetsViewModel.weeks) { week in
+                    Section(header: sectionHeader(weekTitle: week.title)) {
+                        ForEach(week.nuggets) { nugget in
+                            NavigationLink(destination: nugget.view) {
+                                SwiftNuggetView5(title: nugget.title, emoji: nugget.emoji)
+                            }
+                        }
                     }
                 }
                 .listRowBackground(
@@ -33,15 +31,27 @@ struct MainView: View {
                         )
                         .padding(.vertical, 8)
                         .padding(.horizontal, 1)
-                        
+
                 )
                 .listRowSeparator(.hidden)
             }
             .navigationTitle("Swift Nuggets 🍗")
         }
     }
+
+    private func sectionHeader(weekTitle: String) -> some View {
+        HStack {
+            Image(systemName: "calendar")
+                .foregroundColor(.mint)
+            Text(weekTitle)
+                .font(.headline)
+                .foregroundColor(.primary)
+        }
+        .padding(.vertical, 5)
+    }
 }
 
 #Preview {
     MainView()
+        .environment(NuggetsViewModel())
 }

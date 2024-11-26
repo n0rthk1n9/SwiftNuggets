@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SwiftNuggetsApp: App {
+    @State var nuggetsViewModel = NuggetsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environment(nuggetsViewModel)
         }
     }
 }
