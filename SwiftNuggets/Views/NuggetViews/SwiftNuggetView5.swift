@@ -10,18 +10,17 @@ import SwiftUI
 struct SwiftNuggetView5: View {
     var title: String
     var emoji: String
-    
+
     var body: some View {
-        HStack {
-            Text(title)
-            Spacer()
-            Text(emoji)
-        }
-        .padding()
-        .foregroundStyle(.mint)
+        Text(title)
+            .badge(Text(emoji))
+            .padding()
+            .foregroundStyle(.mint)
     }
 }
 
 #Preview {
-    SwiftNuggetView5(title: "Swift Nugget 5", emoji: "🥓")
+    List {
+        SwiftNuggetView5(title: "Swift Nugget 5", emoji: "🥓")
+    }
 }
