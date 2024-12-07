@@ -15,6 +15,7 @@ struct SwiftNuggetsApp: App {
         WindowGroup {
             MainView()
                 .environment(nuggetsViewModel)
+                .fontDesign(.rounded)
         }
     }
 }
