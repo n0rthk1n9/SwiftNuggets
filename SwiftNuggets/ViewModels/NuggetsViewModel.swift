@@ -32,6 +32,9 @@ class NuggetsViewModel {
             Week(title: "Week 3", nuggets: [
                 createNugget(title: "Swift Nugget 9", emoji: "🍐", view: SwiftNuggetView9()),
                 createNugget(title: "Swift Nugget 10", emoji: "🥙", view: SwiftNuggetView10())
+            ]),
+            Week(title: "Week 4", nuggets: [
+                createNugget(title: "Swift Nugget 11", emoji: "🌶️", view: SwiftNuggetView11())
             ])
         ]
     }
